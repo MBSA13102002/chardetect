@@ -19,6 +19,8 @@ async function start() {
     if (image) image.remove()
     if (canvas) canvas.remove()
     image = await faceapi.bufferToImage(imageUpload.files[0])
+    image.width=400
+    image.height=400
     container.append(image)
     canvas = faceapi.createCanvasFromMedia(image)
     container.append(canvas)
